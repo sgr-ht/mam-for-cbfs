@@ -4,9 +4,8 @@
 
 
 ## Download testing datasets
-**Note: The link to the repository on KiltHub will be available soon.**
 
-Please download model_testingdataset.zip from [KiltHub](https://kilthub.cmu.edu/), which contains zip files for testing on Dataset-1 and Dataset-BINKIT as follows:
+Please download model_testingdataset.zip from [KiltHub](https://kilthub.cmu.edu/articles/dataset/Trained_models_and_testing_datasets_used_in_Approach_for_the_optimization_of_machine_learning_models_for_calculating_binary_function_similarity_/26042788), which contains zip files for testing on Dataset-1 and Dataset-BINKIT as follows:
 
 ```
 File name                              SHA256
