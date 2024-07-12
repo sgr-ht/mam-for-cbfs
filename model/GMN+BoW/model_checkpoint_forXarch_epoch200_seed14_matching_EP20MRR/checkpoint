@@ -1,0 +1,2 @@
+model_checkpoint_path: "/output/model_checkpoint_forXarch_epoch200_seed14_matching_EP20MRR/graph-matching-pair-16000"
+all_model_checkpoint_paths: "/output/model_checkpoint_forXarch_epoch200_seed14_matching_EP20MRR/graph-matching-pair-16000"

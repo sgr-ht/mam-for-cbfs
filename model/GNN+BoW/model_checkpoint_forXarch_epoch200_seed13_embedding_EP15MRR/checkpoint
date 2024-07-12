@@ -1,0 +1,2 @@
+model_checkpoint_path: "/output/model_checkpoint_forXarch_epoch200_seed13_embedding_EP15MRR/graph-embedding-pair-84000"
+all_model_checkpoint_paths: "/output/model_checkpoint_forXarch_epoch200_seed13_embedding_EP15MRR/graph-embedding-pair-84000"
