@@ -1,6 +1,11 @@
-MIT License
+Copyright (c) 2024, Suguru Horimoto, Keane Lucas, and Lujo Bauer
 
-Copyright (c) 2024 sgr-ht
+Most code has been modified from Binary Function Similarity at
+https://github.com/Cisco-Talos/binary_function_similarity
+
+For all other code, the below license applies
+
+MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
