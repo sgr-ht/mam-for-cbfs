@@ -198,7 +198,7 @@ citing the following papers:
   volume={49},
   number={4},
   year={2023},
-  pages={1661-1682}
+  pages={1661--1682}
 }
 
 @inproceedings{Horimoto2024,
@@ -206,7 +206,7 @@ citing the following papers:
   title={Approach for the optimization of machine learning models for calculating binary function similarity},
   booktitle={Proceedings of the 21st Conference on Detection of Intrusions and Malware & Vulnerability Assessment (DIMVA)},
   year={2024},
-  pages={}
+  pages={309--329}
 }
 ```
 
