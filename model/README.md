@@ -22,11 +22,26 @@ GMN+fastText.zip		9b7f4f3d1ccbe6204e49709b2e7a142dbc824593f0b7775982e18517ebfeb2
 
 * **run testing by GNN+fastText models**
 
-	1. create a docker container of "gnn-preprocessing" and preprocess testing functions in Dataset-1 based on ["**recreate a fastText model for multi-architecture models**"](../)
+	1. follow steps i to iv in ["**recreate a fastText model for multi-architecture models**"](../)
 
-	2. build "gnn-neuralnetwork" docker image based on [Binary Function Similarity](https://github.com/Cisco-Talos/binary_function_similarity)
+  	2. put **the following fastText model** into `Preprocessing/fastText_Dataset-1_forXarch/Dataset-1_training/`
+	   ```	
+	   fastText_model_dim200 		c5163a9a976324c730924e40e2828b667aa00513934b92954385e7f70eb4efed
+	   ```
 
-	3. run the following script to run a docker container
+  	3. run the following script to preprocess testing functions in Dataset-1
+	   ```	
+	   docker exec fastText_gnn_pre_forxarch /code/gnn_preprocessing_fastText.py \
+	   -i /input/Dataset-1/features/testing/acfg_disasm_Dataset-1_testing \
+	   --t_mode fastText \
+	   -n 200 \
+	   -d /training_data/Dataset-1_training/fastText_model_dim200 \
+	   -o /output/Dataset-1_testing
+	   ```	
+
+ 	4. build "gnn-neuralnetwork" docker image based on [Binary Function Similarity](https://github.com/Cisco-Talos/binary_function_similarity)
+
+	5. run the following script to run a docker container
 	   ```	
 	   docker run --name gnn_forxarch \
 	   -v $(pwd)/../../DBs:/input  \
@@ -34,9 +49,9 @@ GMN+fastText.zip		9b7f4f3d1ccbe6204e49709b2e7a142dbc824593f0b7775982e18517ebfeb2
 	   -v $(pwd)/Preprocessing:/preprocessing \
 	   -it gnn-neuralnetwork bash
 	   ```
-	4. put a model directory (e.g., model_checkpoint_forXarch_epoch200_seed11_fastText_embedding_EP15MRR) into `Models/GGSNN-GMN/NeuralNetwork/`
+	6. put a model directory (e.g., model_checkpoint_forXarch_epoch200_seed11_fastText_embedding_EP15MRR) into `Models/GGSNN-GMN/NeuralNetwork/`
 
-	5. run testing based on ["**run the MRR10 and Recall@1 testing for multi-architecture models**"](../) or ["**run the AUC testing for multi-architecture models**"](../). The following script is an example of running the MRR10 and Recall@1 testing for multi-architecture models.
+	7. run testing based on ["**run the MRR10 and Recall@1 testing for multi-architecture models**"](../) or ["**run the AUC testing for multi-architecture models**"](../). The following script is an example of running the MRR10 and Recall@1 testing for multi-architecture models.
 	   ```	
 	   docker exec \
 	   gnn_forxarch /code/gnn.py --test \
@@ -51,7 +66,7 @@ GMN+fastText.zip		9b7f4f3d1ccbe6204e49709b2e7a142dbc824593f0b7775982e18517ebfeb2
 
 * **run testing by GNN+BoW models**
 
-  	1. create a docker container using the following script after following steps i to v in "**run testing by GNN+fastText models**"
+  	1. create a docker container using the following script after following steps in "**run testing by GNN+fastText models**"
 		```
 		docker run --name bow_gnn_pre_forxarch \
 		-v $(pwd)/../../DBs:/input  \
