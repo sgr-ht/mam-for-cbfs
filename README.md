@@ -10,7 +10,7 @@ The code, the testing dataset and the models are available under the MIT License
 * Binaries of "Normal dataset" from **[BinKit 2.0](https://github.com/SoftSec-KAIST/BinKit?tab=readme-ov-file)** (Copyright (c) 2020 Dongkwan Kim)
 
 gnn.py in [train_and_test](./program/train_and_test) and Python programs in [core](./program/train_and_test/core) excluding mrr_recall_evaluation.py contain part of the code licensed under Apache License 2.0.
-For more information, please refer to the license information in the Python programs.
+For more information, please refer to the license information in the Python programs or [LICENSE](./LICENSE).
 
 
 ## How to recreate a GNN+fastText model and run the testing
@@ -22,6 +22,13 @@ At first, please create the directory structure of [Binary Function Similarity](
 git clone https://github.com/Cisco-Talos/binary_function_similarity.git
 ```
 
+Second, please download `Dataset-1/features.zip` (preprocessed "Dataset-1") using `gdrive_download.py` from [Binary Function Similarity](https://github.com/Cisco-Talos/binary_function_similarity)
+```
+File name		SHA256
+Dataset-1/features.zip 	23a154929ac0600ac5a5893689088f166e1b34fd526f1fc45b6d9cf06ff987f5
+```
+
+Third, put the unzipped `features/` into `DBs/Dataset-1/`
 
 * **recreate a fastText model for multi-architecture models**
 	1. build "gnn-preprocessing" docker image based on the "README.md" under `Models/GGSNN-GMN/` of [Binary Function Similarity](https://github.com/Cisco-Talos/binary_function_similarity)
