@@ -400,7 +400,7 @@ def main_fastText(input_dir, training, dimension, vocab_f_path, output_dir):
             f_out.write(content)
 
 
-        #fastText training
+        # fastText training
         EPOCH = 200
         fastText_model = fasttext.train_unsupervised(output_path, minCount=1, epoch=EPOCH, dim=dimension, thread = 6)
         fastText_model_f_name = "fastText_model_dim" +  str(dimension)
@@ -421,10 +421,10 @@ def main_fastText(input_dir, training, dimension, vocab_f_path, output_dir):
         print("loading fastText model... :", vocab_f_path)
         fastText_model = fasttext.load_model(vocab_f_path)
 
-        result = fastText_model.get_nearest_neighbors('move')
+        result = fastText_model.get_nearest_neighbors('mov')
         print(result)
 
-        #dimension check
+        # dimension check
         if not training and dimension !=  int(vocab_f_path.split('_')[-1][3:]): 
             print("[!] dimension is different from training ({} != {})".format(
                 dimension, int(vocab_f_path.split('_')[-1][3:]) ))
@@ -472,7 +472,7 @@ def main(input_dir, training, t_mode, dimension, vocab_f_path, output_dir):
         main_fastText(input_dir, training, dimension, vocab_f_path, output_dir)
 
     else:
-        print("[!] t_mode error! Please set train mode: BoW, W2V, fastText.")
+        print("[!] t_mode error! Please set train mode: BoW, fastText.")
         return   
     
  
